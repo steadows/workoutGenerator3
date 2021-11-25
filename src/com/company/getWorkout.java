@@ -11,9 +11,7 @@ public class getWorkout {
         boolean test
         = Arrays.asList(arr)
               .contains(toCheckValue);
-
         return test;
-        
     }
 
     static void getUpperBodyWorkout(String cycle) {
@@ -985,8 +983,6 @@ public class getWorkout {
         emomList.add("360's");
         emomList.add("Rope Slams");
 
-        
-
         Integer[] numbers = new Integer[5]; 
         Integer[] obj = new Integer[5];
 
@@ -995,26 +991,18 @@ public class getWorkout {
         for(int i = 0; i < numbers.length; i++) {
 
             obj[i] = (int)(Math.random() * emomList.size());
-            // System.out.println("The Number Generated is: " + obj[i]);
             Integer toCheckValue = obj[i];
             boolean verification = check(numbers, toCheckValue);
-            // System.out.println(verification);
 
             if (verification == true) {
                 do {
-                obj[i] = (int)(Math.random() * emomList.size());
-                toCheckValue = obj[i];
-                verification = check(numbers, toCheckValue);
-                // System.out.println("This is a recheck on integer: " + obj[i]);
-                // System.out.println(verification);
-                }while (verification);
+                    obj[i] = (int)(Math.random() * emomList.size());
+                    toCheckValue = obj[i];
+                    verification = check(numbers, toCheckValue);
+                } while (verification);
             }
-            numbers[i] = obj[i];
-            // System.out.println("Array: "+ Arrays.toString(numbers));
-            
+            numbers[i] = obj[i];            
             System.out.println(emomList.get(numbers[i]));
         }
-       
-
     }
 }

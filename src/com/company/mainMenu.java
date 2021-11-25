@@ -42,5 +42,6 @@ public class mainMenu {
                 System.out.println("Select Number 1-4: ");
             }
         } while (!gotSelection);
+        scnr.close();
     }
 }

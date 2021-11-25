@@ -3,9 +3,6 @@ public class emomMenu {
 
     public static void prompt () {
         boolean keepGoing = false;
-        
-        System.out.println("You've correctly toggled the EMOM Menu");
-
         getWorkout.getEmomWorkout();
        
         String toggle;
@@ -32,7 +29,7 @@ public class emomMenu {
             }
         } while (!(keepGoing));
 
-    
+        scnr.close();
     }
     
 }

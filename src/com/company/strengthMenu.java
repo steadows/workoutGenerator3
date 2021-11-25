@@ -87,5 +87,6 @@ public class strengthMenu {
                 System.out.println("Invalid Entry.");
             }
         } while (!(keepGoing));
+        scnr.close();
     }
 }
