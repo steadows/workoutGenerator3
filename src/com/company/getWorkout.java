@@ -1,9 +1,20 @@
-package com.company;
+
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Arrays;
+
 
 public class getWorkout {
+
+    static boolean check(Integer[] arr, int toCheckValue) {
+        boolean test
+        = Arrays.asList(arr)
+              .contains(toCheckValue);
+
+        return test;
+        
+    }
 
     static void getUpperBodyWorkout(String cycle) {
         ArrayList<exercise> compoundPushList = new ArrayList<exercise>();
@@ -487,12 +498,12 @@ public class getWorkout {
 
         //compound alpha's
 
-        exercise kickstandFrontSquat = new exercise("Kickstand Front Squat", 8,10,12,6);
+        exercise kickstandFrontSquat = new exercise("Double Kettlebell Front Squat", 8,10,12,6);
         exercise gobletSquat = new exercise("Goblet Squat",8,10,12,6);
 
         //compound beta's
 
-        exercise kickstandDead = new exercise("Kickstand Deadlift",8,10,12,6);
+        exercise kickstandDead = new exercise("Double Kettlebell Deadlift",8,10,12,6);
         exercise gobletRDL = new exercise("Goblet RDL",10,12,15,8);
 
         //compound gamma's
@@ -511,6 +522,7 @@ public class getWorkout {
         exercise getUps = new exercise("Kneeling Get-Ups",5,7,9,5);
         exercise deckSquat = new exercise("Deck Squat",6,8,10,6);
         exercise goodMornings = new exercise("KB Good Mornings",10,12,15,8);
+        exercise clubSquats = new exercise("Steel Club Switch Squats", 5, 7, 9, 5);
 
 
         //tertiaries
@@ -536,6 +548,7 @@ public class getWorkout {
         secondaryList.add(getUps);
         secondaryList.add(deckSquat);
         secondaryList.add(goodMornings);
+        secondaryList.add(clubSquats);
 
         //secondaryList.add("Sandbag RDL's");
         //secondaryList.add("Glute Bridge");
@@ -955,5 +968,53 @@ public class getWorkout {
             System.out.println(secondaryList.get(secNxt6).getName() + " X " + secondaryList.get(secNxt6).getCycleFourRepCount());
             secondaryList.remove(secNxt6);
         }
+    }
+
+    static void getEmomWorkout(){
+
+        ArrayList<String> emomList = new ArrayList<String>();
+
+        emomList.add("12 cal Airbike");
+        emomList.add("Payloads");
+        emomList.add("Figure 8's");
+        emomList.add("Deadlifts");
+        emomList.add("Double Clean + Press");
+        emomList.add("Sandbad Cleans");
+        emomList.add("KB Snatch");
+        emomList.add("Thrusters");
+        emomList.add("360's");
+        emomList.add("Rope Slams");
+
+        
+
+        Integer[] numbers = new Integer[5]; 
+        Integer[] obj = new Integer[5];
+
+        //Generates 5 Random Numbers in the range of the emomList
+        System.out.println();
+        for(int i = 0; i < numbers.length; i++) {
+
+            obj[i] = (int)(Math.random() * emomList.size());
+            // System.out.println("The Number Generated is: " + obj[i]);
+            Integer toCheckValue = obj[i];
+            boolean verification = check(numbers, toCheckValue);
+            // System.out.println(verification);
+
+            if (verification == true) {
+                do {
+                obj[i] = (int)(Math.random() * emomList.size());
+                toCheckValue = obj[i];
+                verification = check(numbers, toCheckValue);
+                // System.out.println("This is a recheck on integer: " + obj[i]);
+                // System.out.println(verification);
+                }while (verification);
+            }
+            numbers[i] = obj[i];
+            // System.out.println("Array: "+ Arrays.toString(numbers));
+            
+            System.out.println(emomList.get(numbers[i]));
+        }
+       
+
     }
 }

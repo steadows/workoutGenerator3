@@ -1,4 +1,4 @@
-package com.company;
+
 
 public class exercise {
     private String name;
@@ -13,6 +13,8 @@ public class exercise {
         this.cycleTwoRepCount = cycleTwoRepCount;
         this.cycleThreeRepCount = cycleThreeRepCount;
         this.cycleFourRepCount = cycleFourRepCount;
+        
+
     }
 
     public String getName() {
