@@ -1,5 +1,4 @@
 
-
 import java.util.Scanner;
 
 public class mainMenu {
@@ -25,9 +24,7 @@ public class mainMenu {
             }
             else if (input.equals("2")) {
                 gotSelection = true;
-                System.out.println("Unfortunately, that's not functional yet. Sending you back to Main Menu.");
-                System.out.println();
-                mainMenu.prompt();
+                tabataMenu.prompt();
             }
             else if (input.equals("3")) {
                 gotSelection = true;

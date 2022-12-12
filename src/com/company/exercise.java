@@ -1,5 +1,4 @@
 
-
 public class exercise {
     private String name;
     private int cycleOneRepCount;

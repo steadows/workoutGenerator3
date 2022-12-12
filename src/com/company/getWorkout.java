@@ -1,16 +1,14 @@
 
-
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Arrays;
+import java.util.*;
 
 
 public class getWorkout {
 
-    static boolean check(Integer[] arr, int toCheckValue) {
-        boolean test
-        = Arrays.asList(arr)
-              .contains(toCheckValue);
+    static boolean check(Integer[] arr, Integer toCheckValue) {
+        boolean test = Arrays.asList(arr).contains(toCheckValue);
         return test;
     }
 
@@ -968,20 +966,50 @@ public class getWorkout {
         }
     }
 
+    static ArrayList<String> pluck(ArrayList<String> array, String exr){
+        array.remove(exr);
+        return array;
+    }
+
+    static ArrayList<String> swap(ArrayList<String> choices, ArrayList<String> currentEmom, int indexFrom, int indexTo){
+        currentEmom.remove(indexFrom-1);
+        currentEmom.add(indexFrom-1, choices.get(indexTo-1));
+        Iterator<String> iter = currentEmom.iterator();
+        int count = 1;
+        System.out.println();
+        while (iter.hasNext()) {
+            System.out.print(count + ". " + iter.next() + " ");
+            System.out.println();
+            ++count;
+        }
+        return currentEmom;
+    }
+    
     static void getEmomWorkout(){
 
         ArrayList<String> emomList = new ArrayList<String>();
 
         emomList.add("12 cal Airbike");
         emomList.add("Payloads");
-        emomList.add("Figure 8's");
+        emomList.add("Figure 8 to Cleans");
         emomList.add("Deadlifts");
         emomList.add("Double Clean + Press");
-        emomList.add("Sandbad Cleans");
+        emomList.add("Sandbag Cleans");
         emomList.add("KB Snatch");
         emomList.add("Thrusters");
         emomList.add("360's");
+        emomList.add("Single Kettlebell Clean + Press + Overhead Lunge");
+        emomList.add("Barbell Hang Cleans");
+        emomList.add("Barbell Front Squats");
+        emomList.add("Double Indian Club Clean to Squat");
+        emomList.add("Double Kettlebell Dragonflies");
         emomList.add("Rope Slams");
+        emomList.add("Sled Face Pulls -> Pushes");
+        emomList.add("Sled Pushes");
+        emomList.add("Rotational Bag Slams");
+        emomList.add("Single Kettlebell Row + Dead Clean + Strict Press");
+        emomList.add("Figure 8 to Tactical Snatch");
+        emomList.add("Single Indian Club Swing Clean to Pullover");
 
         Integer[] numbers = new Integer[5]; 
         Integer[] obj = new Integer[5];
@@ -1002,7 +1030,80 @@ public class getWorkout {
                 } while (verification);
             }
             numbers[i] = obj[i];            
-            System.out.println(emomList.get(numbers[i]));
+            System.out.println((i+1) + ". " + emomList.get(numbers[i]));
         }
+        
+        // System.out.println();
+        ArrayList<String> myStrings = new ArrayList<String>();
+        for (int i = 0; i < 5; i++){
+            myStrings.add(emomList.get(numbers[i]));
+        }
+
+
+        for (int i = 0; i < 5; i++){
+            emomList = pluck(emomList, myStrings.get(i));
+        }
+
+        boolean keepGoing = false;
+       
+        String toggle;
+        int oneToSwap;
+        int replacement;
+        Scanner scnr = new Scanner(System.in);
+        do {
+            System.out.println();
+            System.out.println("Would you like to swap one exercise? Enter 'y' for yes, or 'n' for no");
+            toggle = scnr.next();
+            if (toggle.equals("n") || toggle.equals("N")) {
+                keepGoing = true;
+            }
+            else if (toggle.equals("y") || toggle.equals("Y")){
+                if (emomList.size() != 0){
+                keepGoing = false;
+                System.out.println("Which exercise would you like to change? Enter Number: ");
+                Iterator<String> iter = myStrings.iterator();
+
+                int count = 1;
+
+                while (iter.hasNext()) {
+                    System.out.print(count + ". " + iter.next() + " ");
+                    System.out.println();
+                    ++count;
+                }
+
+                count = 1;
+
+                oneToSwap = scnr.nextInt();
+                Iterator<String> iter1 = emomList.iterator();
+                System.out.println("\nSelect which one you'd like to substitute: ");
+                System.out.println();
+
+                
+                while (iter1.hasNext()) {
+                    System.out.print(count + ". " + iter1.next() + " ");
+                    System.out.println();
+                    ++count;
+                }
+
+                replacement = scnr.nextInt();
+                myStrings = swap(emomList, myStrings, oneToSwap, replacement);
+                emomList = pluck(emomList, myStrings.get(oneToSwap-1));
+                }
+                else{
+                    System.out.println("No more choices. Quit being a bitch and get to work!");
+                    break;
+                }
+            }
+            else {
+                keepGoing = false;
+                System.out.println("Invalid Entry.");
+            }
+        } while (!keepGoing);  
+        scnr.close();    
+    }
+
+
+    static void getTabataWorkout() {
+        System.out.println("Hey, you've now reached the Tabata Side.");
     }
 }
