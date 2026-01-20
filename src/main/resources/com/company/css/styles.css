@@ -1,0 +1,477 @@
+/* 
+ * Workout Generator - Main Stylesheet
+ * Dark theme with modern styling (Catppuccin-inspired)
+ */
+
+/* ===== Root Variables ===== */
+.root {
+    -fx-font-family: "SF Pro Display", "Segoe UI", "System", sans-serif;
+    -fx-base: #1e1e2e;
+    -fx-background: #1e1e2e;
+    -fx-control-inner-background: #313244;
+    -fx-accent: #89b4fa;
+    -fx-focus-color: #89b4fa;
+    -fx-faint-focus-color: transparent;
+    
+    /* Custom color properties */
+    -fx-primary: #89b4fa;
+    -fx-primary-dark: #74c7ec;
+    -fx-surface: #313244;
+    -fx-surface-hover: #45475a;
+    -fx-text-primary: #cdd6f4;
+    -fx-text-secondary: #a6adc8;
+    -fx-text-muted: #6c7086;
+    -fx-success: #a6e3a1;
+    -fx-warning: #f9e2af;
+    -fx-error: #f38ba8;
+}
+
+/* ===== Main Container ===== */
+.main-container {
+    -fx-background-color: #1e1e2e;
+}
+
+/* ===== Typography ===== */
+.title-label {
+    -fx-font-size: 42px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #cdd6f4;
+    -fx-effect: dropshadow(gaussian, rgba(137, 180, 250, 0.15), 20, 0, 0, 0);
+}
+
+.subtitle-label {
+    -fx-font-size: 18px;
+    -fx-text-fill: #a6adc8;
+}
+
+.section-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #bac2de;
+}
+
+/* ===== Menu Buttons ===== */
+.menu-button {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-radius: 16px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 12, 0, 0, 6);
+}
+
+.menu-button:hover {
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 20, 0, 0, 8);
+}
+
+.menu-button:pressed {
+    -fx-scale-x: 0.97;
+    -fx-scale-y: 0.97;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 8, 0, 0, 3);
+}
+
+.strength-button {
+    -fx-background-color: linear-gradient(to bottom right, #f38ba8, #eba0ac);
+}
+
+.strength-button:hover {
+    -fx-background-color: linear-gradient(to bottom right, #f5a3b8, #f0b5ba);
+}
+
+.emom-button {
+    -fx-background-color: linear-gradient(to bottom right, #89b4fa, #74c7ec);
+}
+
+.emom-button:hover {
+    -fx-background-color: linear-gradient(to bottom right, #a1c4fb, #8fd3f0);
+}
+
+.tabata-button {
+    -fx-background-color: linear-gradient(to bottom right, #a6e3a1, #94e2d5);
+}
+
+.tabata-button:hover {
+    -fx-background-color: linear-gradient(to bottom right, #b8ebb4, #a8ebe0);
+}
+
+/* ===== Action Buttons ===== */
+.action-button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-color: #45475a;
+    -fx-background-radius: 10px;
+    -fx-padding: 12 24;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 6, 0, 0, 2);
+}
+
+.action-button:hover {
+    -fx-background-color: #585b70;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 4);
+}
+
+.action-button:pressed {
+    -fx-background-color: #3d3f52;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 4, 0, 0, 1);
+}
+
+.back-button {
+    -fx-background-color: #6c7086;
+}
+
+.back-button:hover {
+    -fx-background-color: #7f849c;
+}
+
+.generate-button {
+    -fx-background-color: linear-gradient(to right, #89b4fa, #74c7ec);
+    -fx-effect: dropshadow(gaussian, rgba(137, 180, 250, 0.4), 10, 0, 0, 3);
+}
+
+.generate-button:hover {
+    -fx-background-color: linear-gradient(to right, #a1c4fb, #8fd3f0);
+    -fx-effect: dropshadow(gaussian, rgba(137, 180, 250, 0.5), 14, 0, 0, 4);
+}
+
+.generate-button:pressed {
+    -fx-background-color: linear-gradient(to right, #7aa8f0, #65b8dd);
+}
+
+/* ===== Cards ===== */
+.card {
+    -fx-background-color: #313244;
+    -fx-background-radius: 16px;
+    -fx-padding: 20 24;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 12, 0, 0, 4);
+    -fx-border-color: transparent;
+    -fx-border-width: 1;
+    -fx-border-radius: 16px;
+}
+
+.card:hover {
+    -fx-background-color: #363849;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.35), 16, 0, 0, 6);
+    -fx-border-color: rgba(137, 180, 250, 0.2);
+}
+
+.card-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #cdd6f4;
+}
+
+.card-text {
+    -fx-font-size: 15px;
+    -fx-text-fill: #bac2de;
+}
+
+.card-text-accent {
+    -fx-font-size: 15px;
+    -fx-text-fill: #89b4fa;
+    -fx-font-weight: bold;
+}
+
+/* Exercise Card Number Badge */
+.exercise-badge {
+    -fx-background-color: #89b4fa;
+    -fx-text-fill: #1e1e2e;
+    -fx-min-width: 44;
+    -fx-min-height: 44;
+    -fx-pref-width: 44;
+    -fx-pref-height: 44;
+    -fx-alignment: center;
+    -fx-background-radius: 22;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(137, 180, 250, 0.3), 8, 0, 0, 2);
+}
+
+/* Alternate badge colors for variety */
+.exercise-badge-pink {
+    -fx-background-color: #f38ba8;
+}
+
+.exercise-badge-green {
+    -fx-background-color: #a6e3a1;
+}
+
+.exercise-badge-yellow {
+    -fx-background-color: #f9e2af;
+    -fx-text-fill: #1e1e2e;
+}
+
+.exercise-badge-lavender {
+    -fx-background-color: #cba6f7;
+}
+
+/* ===== Toggle Buttons ===== */
+.toggle-button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #cdd6f4;
+    -fx-background-color: #45475a;
+    -fx-background-radius: 10px;
+    -fx-padding: 12 24;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 6, 0, 0, 2);
+}
+
+.toggle-button:hover {
+    -fx-background-color: #585b70;
+}
+
+.toggle-button:selected {
+    -fx-background-color: linear-gradient(to right, #89b4fa, #74c7ec);
+    -fx-text-fill: #1e1e2e;
+    -fx-effect: dropshadow(gaussian, rgba(137, 180, 250, 0.4), 10, 0, 0, 3);
+}
+
+.toggle-button:selected:hover {
+    -fx-background-color: linear-gradient(to right, #a1c4fb, #8fd3f0);
+}
+
+/* ===== Scroll Pane ===== */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .corner {
+    -fx-background-color: transparent;
+}
+
+/* Scrollbar Track */
+.scroll-bar {
+    -fx-background-color: #1e1e2e;
+    -fx-background-radius: 4px;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #313244;
+    -fx-background-radius: 4px;
+}
+
+/* Scrollbar Thumb */
+.scroll-bar .thumb {
+    -fx-background-color: #45475a;
+    -fx-background-radius: 4px;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #585b70;
+}
+
+.scroll-bar .thumb:pressed {
+    -fx-background-color: #6c7086;
+}
+
+/* Scrollbar Buttons (arrows) */
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-background-color: #45475a;
+    -fx-shape: "";
+    -fx-padding: 0;
+}
+
+/* ===== ComboBox ===== */
+.combo-box {
+    -fx-background-color: #45475a;
+    -fx-background-radius: 10px;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+
+.combo-box:hover {
+    -fx-background-color: #585b70;
+}
+
+.combo-box:focused {
+    -fx-border-color: #89b4fa;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #cdd6f4;
+    -fx-padding: 8 12;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #cdd6f4;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #313244;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 15, 0, 0, 5);
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #cdd6f4;
+    -fx-padding: 10 16;
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #45475a;
+}
+
+.combo-box-popup .list-view .list-cell:selected {
+    -fx-background-color: #89b4fa;
+    -fx-text-fill: #1e1e2e;
+}
+
+/* ===== Labels ===== */
+.label {
+    -fx-text-fill: #cdd6f4;
+}
+
+/* ===== View Container ===== */
+.view-container {
+    -fx-background-color: #1e1e2e;
+    -fx-padding: 24;
+}
+
+/* ===== Separator ===== */
+.separator .line {
+    -fx-border-color: #45475a;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* ===== Tooltip ===== */
+.tooltip {
+    -fx-background-color: #313244;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #cdd6f4;
+    -fx-padding: 10 14;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 3);
+}
+
+/* ===== Focus Indicators ===== */
+.button:focused,
+.toggle-button:focused {
+    -fx-border-color: #89b4fa;
+    -fx-border-width: 2;
+    -fx-border-radius: 10px;
+}
+
+/* ===== Utility Classes ===== */
+.text-muted {
+    -fx-text-fill: #6c7086;
+}
+
+.text-accent {
+    -fx-text-fill: #89b4fa;
+}
+
+.text-success {
+    -fx-text-fill: #a6e3a1;
+}
+
+.text-warning {
+    -fx-text-fill: #f9e2af;
+}
+
+.text-error {
+    -fx-text-fill: #f38ba8;
+}
+
+.bg-surface {
+    -fx-background-color: #313244;
+    -fx-background-radius: 12px;
+}
+
+/* ===== Workout Set Card Specifics ===== */
+.set-card {
+    -fx-background-color: linear-gradient(to bottom right, #313244, #2a2a3c);
+    -fx-background-radius: 16px;
+    -fx-padding: 20 24;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 14, 0, 0, 5);
+}
+
+.set-card:hover {
+    -fx-background-color: linear-gradient(to bottom right, #363849, #2f2f42);
+}
+
+.set-header {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f38ba8;
+}
+
+.rounds-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #a6adc8;
+    -fx-font-style: italic;
+}
+
+.exercise-row {
+    -fx-padding: 6 0;
+}
+
+.exercise-name {
+    -fx-font-size: 16px;
+    -fx-text-fill: #cdd6f4;
+}
+
+.reps-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #89b4fa;
+    -fx-font-weight: bold;
+}
+
+/* ===== EMOM Exercise Card Specifics ===== */
+.emom-card {
+    -fx-background-color: linear-gradient(to right, #313244, #2d2d3f);
+    -fx-background-radius: 16px;
+    -fx-padding: 16 24;
+}
+
+.emom-card:hover {
+    -fx-background-color: linear-gradient(to right, #3a3a4f, #333346);
+    -fx-effect: dropshadow(gaussian, rgba(137, 180, 250, 0.15), 16, 0, 0, 6);
+}
+
+/* ===== Swap Button ===== */
+.swap-button {
+    -fx-font-size: 12px;
+    -fx-text-fill: #cdd6f4;
+    -fx-background-color: #45475a;
+    -fx-background-radius: 8px;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+}
+
+.swap-button:hover {
+    -fx-background-color: #585b70;
+}
+
+/* ===== Coming Soon Badge ===== */
+.coming-soon-badge {
+    -fx-background-color: linear-gradient(to right, #a6e3a1, #94e2d5);
+    -fx-background-radius: 20px;
+    -fx-text-fill: #1e1e2e;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 32;
+    -fx-effect: dropshadow(gaussian, rgba(166, 227, 161, 0.4), 15, 0, 0, 5);
+}

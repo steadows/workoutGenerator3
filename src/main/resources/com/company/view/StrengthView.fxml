@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.company.controller.StrengthController"
+            styleClass="view-container">
+
+    <!-- Top: Title and Back Button -->
+    <top>
+        <VBox spacing="20">
+            <padding>
+                <Insets bottom="20"/>
+            </padding>
+            
+            <HBox alignment="CENTER_LEFT">
+                <Button text="← Back"
+                        onAction="#handleBackClick"
+                        styleClass="action-button, back-button"/>
+            </HBox>
+            
+            <VBox alignment="CENTER" spacing="10">
+                <Label text="Strength Training" styleClass="title-label"/>
+                <Label text="Configure and generate your workout" styleClass="subtitle-label"/>
+            </VBox>
+        </VBox>
+    </top>
+
+    <!-- Center: Configuration and Workout Display -->
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="30">
+            <padding>
+                <Insets top="20"/>
+            </padding>
+            
+            <!-- Body Type Selection -->
+            <VBox alignment="CENTER" spacing="10">
+                <Label text="Select Body Focus" styleClass="card-title"/>
+                <HBox alignment="CENTER" spacing="15">
+                    <fx:define>
+                        <ToggleGroup fx:id="bodyTypeGroup"/>
+                    </fx:define>
+                    <ToggleButton fx:id="upperBodyToggle"
+                                  text="Upper Body"
+                                  toggleGroup="$bodyTypeGroup"
+                                  styleClass="toggle-button"
+                                  selected="true"
+                                  prefWidth="140"
+                                  prefHeight="50"/>
+                    <ToggleButton fx:id="lowerBodyToggle"
+                                  text="Lower Body"
+                                  toggleGroup="$bodyTypeGroup"
+                                  styleClass="toggle-button"
+                                  prefWidth="140"
+                                  prefHeight="50"/>
+                </HBox>
+            </VBox>
+
+            <!-- Cycle Selection -->
+            <VBox alignment="CENTER" spacing="10">
+                <Label text="Select Training Cycle" styleClass="card-title"/>
+                <HBox alignment="CENTER" spacing="10">
+                    <fx:define>
+                        <ToggleGroup fx:id="cycleGroup"/>
+                    </fx:define>
+                    <ToggleButton fx:id="cycle1Toggle"
+                                  text="Cycle 1"
+                                  toggleGroup="$cycleGroup"
+                                  styleClass="toggle-button"
+                                  selected="true"
+                                  prefWidth="100"
+                                  prefHeight="45"/>
+                    <ToggleButton fx:id="cycle2Toggle"
+                                  text="Cycle 2"
+                                  toggleGroup="$cycleGroup"
+                                  styleClass="toggle-button"
+                                  prefWidth="100"
+                                  prefHeight="45"/>
+                    <ToggleButton fx:id="cycle3Toggle"
+                                  text="Cycle 3"
+                                  toggleGroup="$cycleGroup"
+                                  styleClass="toggle-button"
+                                  prefWidth="100"
+                                  prefHeight="45"/>
+                    <ToggleButton fx:id="cycle4Toggle"
+                                  text="Cycle 4"
+                                  toggleGroup="$cycleGroup"
+                                  styleClass="toggle-button"
+                                  prefWidth="100"
+                                  prefHeight="45"/>
+                </HBox>
+                <Label fx:id="cycleDescriptionLabel" 
+                       text="3 sets × 3 rounds" 
+                       styleClass="subtitle-label"/>
+            </VBox>
+
+            <!-- Generate Button -->
+            <HBox alignment="CENTER" spacing="15">
+                <Button text="Generate Workout"
+                        onAction="#handleGenerateClick"
+                        styleClass="action-button, generate-button"
+                        prefWidth="200"
+                        prefHeight="50"/>
+                <Button fx:id="newWorkoutButton"
+                        text="New Workout"
+                        onAction="#handleGenerateClick"
+                        styleClass="action-button, strength-button"
+                        prefWidth="150"
+                        prefHeight="50"
+                        visible="false"
+                        managed="false"/>
+            </HBox>
+
+            <!-- Workout Display Area -->
+            <ScrollPane fx:id="workoutScrollPane"
+                        fitToWidth="true"
+                        styleClass="scroll-pane"
+                        visible="false"
+                        managed="false"
+                        VBox.vgrow="ALWAYS">
+                <VBox fx:id="workoutContainer"
+                      spacing="20"
+                      alignment="TOP_CENTER">
+                    <padding>
+                        <Insets top="10" right="20" bottom="20" left="20"/>
+                    </padding>
+                </VBox>
+            </ScrollPane>
+        </VBox>
+    </center>
+
+</BorderPane>

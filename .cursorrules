@@ -1,0 +1,9 @@
+# GSD (Get Shit Done) Protocol
+1. **Discuss**: Always analyze the file structure and requirements before coding.
+2. **Plan**: Maintain a `PLAN.md` file. It is the Source of Truth.
+3. **Execute**: 
+   - Read `PLAN.md`.
+   - Pick the first [ ] TODO task.
+   - Implement it.
+   - Mark it [x] DONE.
+   - STOP. Do not do two tasks at once.
